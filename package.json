@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"style": "tailwindcss i \"./src/styles/index.css\" -o \"./src/styles/index.css\" --watch",
+		"style": "tailwindcss -i \"./src/styles/index.css\" -o \"./src/styles/index.css\" --watch",
 		"dev": "concurrently \"npm run style\" \"npm run serve\""
 	},
 	"dependencies": {
