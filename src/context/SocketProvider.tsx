@@ -23,7 +23,7 @@ function SocketProvider({ children }: PropsWithChildren) {
 			if (status === "authenticated") {
 				const { access_token } = data.user;
 				if (access_token) {
-					const socket = await io("http://localhost:5000", {
+					const socket = await io(process.env.NEXT_PUBLIC_SOCKER_URL ?? "", {
 						query: {
 							secretToken: access_token,
 						},
@@ -48,6 +48,7 @@ function SocketProvider({ children }: PropsWithChildren) {
 				console.log("socket id ======>", socket.id);
 			});
 			socket.on("successResponse", console.log);
+			socket.on("errorResponse", console.log);
 		}
 	}, [socket]);
 
